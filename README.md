@@ -1,4 +1,4 @@
-# Telegram Delete All Messages
+# Telegram Wipe
 
 Userbot para deletar **todas as mensagens** de canais, grupos ou chats privados no Telegram.
 
