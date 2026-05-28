@@ -1,95 +1,95 @@
 # Telegram Wipe
 
-Userbot para deletar **todas as mensagens** de canais, grupos ou chats privados no Telegram.
+A userbot for deleting **all messages** from Telegram channels, groups, or private chats.
 
-## 📋 O que ele pode apagar
+## 📋 What it can delete
 
-| Tipo | Funciona? | Requisito |
-|------|-----------|-----------|
-| **Canais** | ✅ Sim | Ser admin/dono |
-| **Grupos/Supergrupos** | ✅ Sim | Ser admin com permissão de deletar |
-| **Chats privados** | ⚠️ Parcial | Só deleta suas próprias mensagens |
+| Type | Works? | Requirement |
+|------|--------|-------------|
+| **Channels** | ✅ Yes | Be admin/owner |
+| **Groups/Supergroups** | ✅ Yes | Be admin with delete permission |
+| **Private chats** | ⚠️ Partial | Only deletes your own messages |
 
-## 🔧 Requisitos
+## 🔧 Requirements
 
-- [Node.js](https://nodejs.org/) instalado
-- Credenciais da API do Telegram (`api_id` e `api_hash`)
+- [Node.js](https://nodejs.org/) installed
+- Telegram API credentials (`api_id` and `api_hash`)
 
-## 📦 Instalação
+## 📦 Installation
 
 ```bash
-# Clone o repositório
+# Clone the repository
 git clone https://github.com/revoltz-dev/telegram-wipe.git
 cd telegram-wipe
 
-# Instale as dependências
+# Install dependencies
 npm install
 ```
 
-## ⚙️ Configuração
+## ⚙️ Configuration
 
-### 1. Obter credenciais da API
+### 1. Get your API credentials
 
-1. Acesse [my.telegram.org](https://my.telegram.org)
-2. Faça login com seu número de telefone
-3. Vá em **API development tools**
-4. Crie um novo aplicativo (ou use um existente)
-5. Copie o `api_id` e `api_hash`
+1. Go to [my.telegram.org](https://my.telegram.org)
+2. Log in with your phone number
+3. Open **API development tools**
+4. Create a new application (or use an existing one)
+5. Copy the `api_id` and `api_hash`
 
-### 2. Configurar o script
+### 2. Configure the script
 
-Abra o arquivo `userbot.js` e substitua as credenciais:
+Open `userbot.js` and replace the credentials:
 
 ```javascript
-const api_id = 123456789;           // Número inteiro
-const api_hash = "SEU_API_HASH";     // String
+const api_id = 123456789;           // Integer
+const api_hash = "YOUR_API_HASH";    // String
 ```
 
-## 🚀 Como Usar
+## 🚀 How to use
 
 ```bash
 node userbot.js
 ```
 
-O script irá:
+The script will:
 
-1. Pedir seu **número de telefone** (com DDI, ex: `+5511999999999`)
-2. Pedir o **código de verificação** enviado pelo Telegram
-3. Pedir a **senha 2FA** (se você tiver configurada)
-4. Perguntar o **ID ou @username** do chat que deseja limpar
-5. Pedir **confirmação** antes de deletar
+1. Ask for your **phone number** (with country code, e.g., `+5511999999999`)
+2. Ask for the **verification code** sent by Telegram
+3. Ask for your **2FA password** (if you have one set up)
+4. Ask for the **chat ID or @username** you want to wipe
+5. Ask for **confirmation** before deleting
 
-## 🔍 Como descobrir o ID de um chat
+## 🔍 How to find a chat ID
 
-- Adicione o bot [@userinfobot](https://t.me/userinfobot) ou [@getidsbot](https://t.me/getidsbot) ao chat
-- Ou encaminhe uma mensagem do chat para um desses bots
-- IDs de canais/grupos começam com `-100` (ex: `-1001234567890`)
-- Você também pode usar o `@username` do canal
+- Add [@userinfobot](https://t.me/userinfobot) or [@getidsbot](https://t.me/getidsbot) to the chat
+- Or forward a message from the chat to one of those bots
+- Channel/group IDs start with `-100` (e.g., `-1001234567890`)
+- You can also use the channel's `@username`
 
-## 📝 Exemplo de uso
+## 📝 Usage example
 
 ```
 ===========================================
-       USERBOT - DELETAR TUDO
+       USERBOT - DELETE EVERYTHING
 ===========================================
 
-? Digite seu número de telefone: +5511999999999
-? Digite o código recebido: 12345
-? Digite o ID do canal: -1001234567890
-? Confirma deletar TODAS as mensagens? (sim/nao): sim
+? Enter your phone number: +5511999999999
+? Enter the code you received: 12345
+? Enter the channel ID: -1001234567890
+? Confirm deleting ALL messages? (yes/no): yes
 
-100 mensagens deletadas...
-200 mensagens deletadas...
+100 messages deleted...
+200 messages deleted...
 ...
-=== CONCLUÍDO: 1080 mensagens deletadas ===
+=== DONE: 1080 messages deleted ===
 ```
 
-## 🛡️ Segurança
+## 🛡️ Security
 
-- **Nunca compartilhe** seu `api_id`, `api_hash` ou string de sessão
-- O script não armazena suas credenciais em nenhum servidor externo
-- Todo o processamento é feito localmente
+- **Never share** your `api_id`, `api_hash`, or session string
+- The script does not store your credentials on any external server
+- All processing is done locally
 
-## 📄 Licença
+## 📄 License
 
 MIT License
